@@ -1,0 +1,167 @@
+
+/* 
+==========================================================
+                  Public Styles
+========================================================
+*/
+* , *::before , *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: aquamarine;
+  color: #141517
+}
+
+
+
+/* 
+  ================================================
+                  start Nav
+==================================================
+*/
+nav{
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 39px;
+  width: 100%;
+}
+nav .list{
+
+}
+nav .list .list-item{
+  display: inline-block;
+  position: relative;
+}
+nav .list .list-item:nth-child(4)::after{
+  content: "HOt";
+  background-color: #FF2020;
+  position: absolute;
+  color: #fff;
+  top: -25px;
+  font-size: 11px;
+  padding: 3px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  box-shadow: 0px 2px 6px 0px #000;
+}
+nav .list .list-item > a{
+  text-decoration: none;
+  color: #141517;
+  font-size: 19px;
+  margin-left: 34px;
+  text-transform: capitalize;
+}
+
+nav .list .list-item .dropdown{
+  position: absolute;
+  background: #fff;
+  list-style: none;
+  width: 173px;
+  padding: 17px 0;
+  top: 38px;
+  left: 20px;
+  border-top: 5px solid #FF2020;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  opacity: 0;
+  transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  -moz-transition: all .4s ease-in;
+  -ms-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+}
+nav .list .list-item:hover > .dropdown{
+  opacity: 1;
+  top: 47px;
+}
+nav .list .list-item .dropdown::before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #FF2020;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -22px;
+  left: 15px;
+}
+
+
+nav .list .list-item .dropdown .dropdown-item{
+  margin: 11px 18px;
+  text-decoration: none;
+  font-size: 22px;
+}
+nav .list .list-item .dropdown .dropdown-item a{
+  text-decoration: none;
+  color: #141517;
+}
+
+nav .nav-icon a{
+  margin-left: 25px;
+  color: #141517;
+}
+nav input  , nav label{
+  display: none;
+}
+
+
+@media(max-width:991px){
+  nav {
+    padding: 26px 14px;
+
+} 
+nav label{
+  display: block;
+  order: 3;
+  cursor: pointer;
+}
+nav label i{
+  color: #FF2020;
+  font-size: 23px;
+}
+  nav .list {
+    position: absolute;
+    background: #e0bdbd;
+    top: 75px;
+    left: 19px;
+    width: 90%;
+    padding: 20px 0;
+    opacity: 0;
+    transition: all .4s ease-in;
+    -webkit-transition: all .4s ease-in;
+    -moz-transition: all .4s ease-in;
+    -ms-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+}
+nav input:checked ~ .list{
+  opacity: 1;
+  top: 80px;
+}
+nav .list .list-item {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+nav .nav-icon a {
+  margin-left: 10px;
+  color: #141517;
+}
+nav .list .list-item:nth-child(4)::after {
+  display: none;
+}
+}
+
+@media(max-width:500px){
+  nav .list {
+    left: 19px;
+    width: 88%;
+  }
+}
